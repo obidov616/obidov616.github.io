@@ -1,74 +1,109 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mening Tugmali Saytim</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mening Linklarim</title>
 
-    <style>
-   body {
+<style>
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     text-align: center;
+    overflow-x: hidden;
+
+    /* QORASIMON SILVER */
     background: linear-gradient(
         to bottom,
-        #ffffff 0%,
-        #e6e6e6 25%,
-        #cfcfcf 50%,
-        #b3b3b3 75%,
-        #8f8f8f 100%
+        #2b2b2b 0%,
+        #3a3a3a 25%,
+        #4a4a4a 50%,
+        #2f2f2f 75%,
+        #1c1c1c 100%
     );
 }
 
-        h1 {
-            padding: 20px;
-            color: #111;
-        }
+h1 {
+    padding: 20px;
+    color: #fff;
+}
 
-        .container {
-            padding: 20px;
-        }
+/* Tugmalar */
+.btn {
+    display: block;
+    width: 90%;
+    max-width: 420px;
+    margin: 15px auto;
+    padding: 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: 0.2s;
+}
 
-        .btn {
-            display: block;
-            width: 90%;
-            max-width: 400px;
-            margin: 15px auto;
-            padding: 18px;
-            border-radius: 40px;
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: 0.2s;
-        }
+.btn:hover {
+    transform: scale(1.05);
+}
 
-        .btn:hover {
-            transform: scale(1.05);
-        }
+.red { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+.blue { background: linear-gradient(45deg, #2193b0, #6dd5ed); }
+.green { background: linear-gradient(45deg, #56ab2f, #a8e063); }
+.orange { background: linear-gradient(45deg, #f7971e, #ffd200); }
+.purple { background: linear-gradient(45deg, #8e2de2, #4a00e0); }
+.pink { background: linear-gradient(45deg, #ff758c, #ff7eb3); }
 
-        /* Rangli tugmalar */
-        .red { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
-        .blue { background: linear-gradient(45deg, #2193b0, #6dd5ed); }
-        .green { background: linear-gradient(45deg, #56ab2f, #a8e063); }
-        .orange { background: linear-gradient(45deg, #f7971e, #ffd200); }
-        .purple { background: linear-gradient(45deg, #8e2de2, #4a00e0); }
-        .pink { background: linear-gradient(45deg, #ff758c, #ff7eb3); }
-    </style>
+/* Sakura barglari */
+.sakura {
+    position: fixed;
+    top: -10px;
+    width: 12px;
+    height: 12px;
+    background: pink;
+    border-radius: 50% 50% 50% 0;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <h1>🌍 Barcha fayllar shu yerda</h1>
+<h1>🌸 Barcha filelar shu yerda</h1>
 
-    <div class="container">
-        <a class="btn red" href="https://example.com" target="_blank">Bepul Emote</a>
-        <a class="btn blue" href="https://example.com" target="_blank">V Belgisi FF</a>
-        <a class="btn green" href="https://example.com" target="_blank">Free Fire 2017</a>
-        <a class="btn orange" href="https://example.com" target="_blank">ID orqali olmos olish</a>
-        <a class="btn purple" href="https://example.com" target="_blank">Pro AIM</a>
-        <a class="btn pink" href="https://example.com" target="_blank">FF Headshot</a>
-    </div>
+<a class="btn red" href="https://example.com" target="_blank">Tugma 1</a>
+<a class="btn blue" href="https://example.com" target="_blank">Tugma 2</a>
+<a class="btn green" href="https://example.com" target="_blank">Tugma 3</a>
+<a class="btn orange" href="https://example.com" target="_blank">Tugma 4</a>
+<a class="btn purple" href="https://example.com" target="_blank">Tugma 5</a>
+<a class="btn pink" href="https://example.com" target="_blank">Tugma 6</a>
+
+<script>
+function createPetal() {
+    const petal = document.createElement("div");
+    petal.classList.add("sakura");
+
+    petal.style.left = Math.random() * window.innerWidth + "px";
+    petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
+    petal.style.opacity = Math.random();
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 10000);
+}
+
+setInterval(createPetal, 300);
+</script>
 
 </body>
 </html>
